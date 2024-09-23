@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여백(margin+padding)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration:none;
+            color: inherit;
+        }
+        
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: chocolate;
+            border: 1px solid #ededed;/* 테두리 설정 , 두께 스타일 컬러 */
+
+        }
+        .margin-01{
+            margin: 50px; /* 외부 여백(상하좌우)이 넓어짐 */
+
+        }
+        .margin-02{
+            margin: 100px 50px;/* 위아래 값 , 좌우 값 2개로 나누어짐 */
+        }
+        .margin-03{
+            margin: 100px 50px 10px;/* 위 , 좌우 , 아래 값으로 나누어짐 */
+        }
+        .margin-04{
+            margin: 150px 100px 50px 10px;/* 정시계방향으로 값이 정해진다.(상우하좌) */
+            margin-left: 50px;/* 한방향만 범위를 정할 수 있다.  */
+        }
+        /* 위 아래 마진 값은 중첩된다 / 코딩 맨 아래 수치가 적용된다. */
+        .padding-01{
+            padding: 50px;/* 텍스트와 내부 색상 사이에 여백이 생김 */
+            box-sizing: border-box;
+            /* 설정해둔 사이즈 내에서 정렬하여 보이게 해준다. */
+        }
+        .padding-02{
+            padding: 50px 30px;
+            box-sizing: border-box;
+        }
+        .padding-03{
+            padding: 100px 50px 10px;
+            box-sizing: border-box;
+        }
+        .padding-04{
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+        /* 값이 정해지는 방향은 margin과 같음, 단 내부 영역이 겹쳐지지 않음 */
+    </style>
+</head>
+<body>
+    <h1>외부여백 margin</h1>
+    <div class="margin-01">margin01</div>
+    <div class="margin-02">margin02</div>
+    <div class="margin-03">margin03</div>
+    <div class="margin-04">margin04</div>
+    
+    <hr>
+
+    <h1>내부여백 padding</h1>
+    <div class="padding-01">padding01</div>
+    <div class="padding-02">padding02</div>
+    <div class="padding-03">padding03</div>
+    <div class="padding-04">padding04</div>
+</body>
+</html>

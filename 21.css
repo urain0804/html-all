@@ -1,0 +1,106 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+li{list-style: none;}
+
+
+/* 수평정렬 */
+.section{
+    background-color:teal;
+    margin: 50px 0;
+    padding: 50px;
+}
+.section .item_wrap{
+    background-color: tomato;
+}
+.section .item_wrap div{
+    background-color: wheat;
+    font-size: 25px;
+}
+.flex-01 .item_wrap{
+    display: flex;
+    justify-content:space-around;
+    /* flex-start = 제일 왼쪽으로
+    center = 중앙으로
+    flex-end = 제일 오른쪽으로
+    space-around = 양끝에 공간 + 간격맞추기(끝 영역은 중간영역의 반 정도)
+    space-between = 양끝 공간x + 간격맞추기 
+    *space = 모든여백 동일하게 맞춰줌*/
+}
+
+
+/* 수평정렬 1줄  */
+.flex-02 .item_wrap{
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-end/* 아래쪽에 맞숴서 정렬 */;
+    /* flex-start
+    center
+    flex-end */
+}
+.flex-02 .item_wrap div:nth-child(1){
+    height: 300px;
+}
+.flex-02 .item_wrap div:nth-child(2){
+    height: 200px;
+}
+.flex-02 .item_wrap div:nth-child(3){
+    height: 100px;
+}
+
+
+/* 수평정렬 2줄이상 */
+.flex-03 .item_wrap{
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    /* 부모가 가진 값에서 중심으로 부른다 
+    align-content = 수직정렬(세로정렬)
+    flex-start = 기본값
+    center = 중앙으로
+    flex-end = 제일 아래쪽으로
+    space-around = 위아래 공간 + 간격맞추기(끝 영역은 중간영역의 반 정도)
+    space-between = 위아래 공간x + 간격맞추기
+    spaxe-evenly */
+}
+.flex-03 .item_wrap div{
+    width: 100%;
+}
+
+
+/* 아이템 순서변경 */
+.flex-04 .item_wrap{
+    display: flex;
+}
+.flex-04 .item_wrap div:nth-child(2){
+    order: 1;
+}
+.flex-04 .item_wrap div:nth-child(3){
+    order: -1;
+}
+/* order 순서변경
+기본값 0
+숫자가 클수록 뒤에배치
+작을 수록 앞으로 배치
+본인에게 사용 */
+
+
+/* 세로배치 */
+.flex-05 .item_wrap {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column 
+    세로로 배치
+    justify-content: space-between : 수직정렬(세로)
+    align-content : 수평(가로)정렬*/
+   justify-content: space-between;/* 수직정렬 */
+}

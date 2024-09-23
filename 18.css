@@ -1,0 +1,135 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+body{
+    height: 3000px;
+
+}
+.position{
+    width: 400px;
+    height: 400px;
+    background-color: wheat;
+    margin: 100px auto;
+    position: relative;
+    /* 포지션 배치 기준을 정해줄 수 있는 역할 도 있음
+    absolute 의 기준인 부모에게 relative를 사용하면 됨 */
+}
+.position div{
+    width: 100px;
+    height: 100px;
+    /* position:absolute;
+    top: 0;
+    left: 0; */
+    /* 기준으로 할 수는 있지만 본인의 원래 위치가 사라짐 */
+}
+.position div:nth-child(1){
+    background-color: yellow;
+    /* position: relative;
+    top: 50px; */
+    /* 밑에 있는 요소들과 겹쳐지면서 이동 / margin은 밀려나서 공간을 만듬
+    배치기준이 본인이 됨 */
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    position: static;
+    /* 포지션 해제하는 역할 / 포지션 초기화 */
+}
+.position div:nth-child(2){
+    background-color: yellowgreen;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    /* 본인이 아니라 다른 요소가 기준이 되어 위치가 이동됨 
+    상위 기준의 부모가 포지션 기준이 됨 (상위 부모가 없다면 바디가 기준이 됨)*/
+}
+.position div:nth-child(3){
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+.position div:nth-child(4){
+    background-color: violet;
+    position: absolute;
+    left: -100px;
+    bottom: 0;
+}
+.position div:nth-child(5){
+    background-color: thistle;
+    position: absolute;
+    left: 0;
+    top: -100px;
+}
+.position div:nth-child(6){
+    background-color: tomato;
+    position: fixed;
+    right: 100px;
+    top: 100px;
+    /* 위치 설정후 고정 , 홈페이지 top , 상단 메뉴 등에 사용 된다.
+    부모상관없이 바디를 기준으로 잡히게 된다. */
+    position: static;
+
+}
+.position div:nth-child(7){
+    background-color: teal;
+    position:sticky;
+    top: 0;
+    left: 0;
+    /*설정한 영역 안에서 상단에 남아있음(메뉴바) */
+}
+.main_visual {
+    height: 600px;
+    position: relative;
+}
+.main_visual img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main_visual div{
+    width: 1280px;
+    background-color:skyblue;
+    
+    position: absolute;/* margin 0 auto 사용x */
+    top: 50%;
+    left: 50%;
+    /* 위는 부모값에서 이동된다 */
+    transform: translate(-50%,-50%);/* 본인 넓이에서 이동 */
+    /* 텍스트 이미지 또는 영상 중앙으로 배치시 사용하는 공식 */
+    /* 본인이 가지고 있는 높이, 넓이의 반만큼 이동함 */
+}  
+
+.main_visual02{
+    height: 500px;
+    position: relative;
+}
+.main_visual02 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main_visual02 div{
+    width: 1280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.main_visual02 div h1{
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+.main_visual02 div p{
+    font-size: 30px;
+}

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.section{
+    width: 1280px;
+    background-color: darkorange;
+    margin: 50px auto;
+    
+}
+.section h1{
+    font-size: 40px;
+    margin: 40px; 
+} 
+.section .item_list{
+    display: flex;
+    /* 넓이 안에 들어가는 자식들을 사이즈에 맞게 맞춰서 들어감, 
+    공간이 부족할 경우 밑으로 내려감  
+    display: flex; + flex-wrap: wrap;사용 */
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* 자식들 밑으로 내려주기
+    flex-wrap: wrap;+ display: flex; + row-gap: 50px;
+    세가지를 같이 써야지 사용가능*/
+    row-gap: 50px;
+    /* 아이템 위아래 사이 간격 조절 */
+}
+.section .item_list .item{
+    width: 408px;
+    margin-bottom: 50px;
+}
+.section .item_list .item .image{
+    height: 408px;
+    margin-right: 20px;
+    position: relative;
+}
+.section .item_list .item .image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.section .item_list .item .image span{
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 포지션의 영향으로 가로세로 지정가능해짐 */
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    /* 글자중앙 text-align: center; + line-height: 50px; */
+}
+.section .item_list .item .text h2{
+    margin: 20px 0;
+
+}
+.section .item_list .item .text .strong {
+    font-size: 20px;
+    
+    
+} 
+.section .item_list .item .text strong span{
+    color: red;
+    margin-right: 20px;
+}

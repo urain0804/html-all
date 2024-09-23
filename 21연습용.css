@@ -1,0 +1,115 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.inner{
+    width: 1280px;
+    margin: 50px auto;
+}
+.inner .header{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.inner .header .title h1{
+    font-size: 18px;
+}
+.inner .header .title p{
+    font-size: 60px;
+    font-weight: bold;
+}
+.inner .header .nav ul{
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+.inner .header .nav ul li{
+    font-size: 18px;
+    background-color: antiquewhite;
+    padding: 15px;
+    border-radius: 50px;
+    border: 3px solid #0c0c0c;
+}
+
+.inner .section-01{
+    display: flex;
+    margin-top: 40px;
+    gap: 20px;
+}
+.inner .section-01 img{
+    width: 840px;
+    height: 550px;
+    border-radius: 50px;
+}
+.inner .section-01 .box{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+.section-02{
+    width: 1280PX;
+    margin: 0 auto;
+}
+.section-02 .title{
+    margin-bottom: 50px;
+}
+.section-02 .title h1{
+    font-size: 18px
+}
+.section-02 .title p{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.section-02 .item_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-02 .item_wrap .box .item img{
+    width: 409px;
+    height: 300px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.section-02 .item_wrap .box .item .text{
+    position: absolute; 
+    bottom: 20%;
+    left: 10%;
+}
+
+.section-02 .item_wrap .box .item .text h3{
+    font-size: 20px;
+}
+.section-02 .item_wrap .box .item .text p{
+    font-size: 16px;
+}
+.section-02 .item_wrap .box .item {
+    position: relative;
+}
+
+.section-02 .item_wrap .box:nth-child(2) img{
+    width: 409px;
+    height: 624px;
+}
+.section-02 .item_wrap .box:nth-child(1) .item:nth-child(1){
+    margin-bottom: 20px;
+}
+.section-02 .item_wrap .box:nth-child(3) .item:nth-child(1){
+    margin-bottom: 20px;
+}

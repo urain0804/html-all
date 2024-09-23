@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그</title>
+
+    <style>
+        /* 주석 alt+shift+a */
+        /* 선택자 {속성:속성값;} */
+        /* h1{color: rebeccapurple;} */
+        img {
+            width: 400px; /* 가로 :200px */
+            display: block; /* 세로로 나열 */
+        }
+        a {
+            display: block;
+            color: rgb(255, 169, 40);
+            text-decoration: none;/* 글자선 : 없애기  */
+        }
+        .menu {
+            background-color: aquamarine;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <!-- 블럭요소 -->
+    <h1>제목 태그1 로고 사용</h1>
+    <h2>제목 태그2 </h2>
+    <h3>제목 태그3</h3>
+    <h4>제목 태그4</h4>
+    <h5>제목 태그5</h5>
+    <h6>제목 태그6</h6>
+
+    <p class="menu">p태그 기본 텍스트, 본문 내용, 설명</p>
+
+    <ul>
+        <li>ul안에 li태그</li>
+        <li class="menu">메뉴, 카페고리 등 사용</li>
+        <li>리스트 태그</li>
+        <li>웹사이트 상단메뉴에 작성 , 공지사항 메뉴 등등으로 사용됨</li>
+        <li>ul안에는 li만 작성가능</li>
+        <li>li안에는 모든 태그 적용가능</li>
+    </ul>
+
+    <ol>
+        <li>ol 안에 li</li>
+        <li>레시피, 연혁 등 사용</li>
+    </ol>
+
+    <dl>
+        <dt>제목</dt>
+        <dd>제목에 대한 정의, 설명</dd>
+        <dd>dl안에는 dt, dd만 작성가능</dd>
+    </dl>
+
+    <div>div는 그룹화 시켜주는 태그</div>
+
+    <hr><!-- 선을 기준으로 위로는 블럭 요소(존재감이 크다), 아래는 인라인요소(존재감이 작다) 이다.
+    큰 영역안에 작은 영역이 들어갈 수 있기 때문에 블럭요소 안에 인라인 요소가 들어가게 된다.
+    ex ) <div><span></span></div> 가능 -->
+    <!-- 예외 / a태그(인라인) 안에는 블럭요소가 들어갈 수 있다. -->
+
+    <!-- 인라인 요소 -->
+    <a href="https://www.naver.com/">a태그는 링크연결</a>
+    <a href="https://www.naver.com/" target="_blank">네이버 이동</a>
+
+
+    <img src="img/예시 이미지3.jpg" alt="이미지 설명" />
+
+    <strong>strong 내용강조 , 가격표현에 사용, 강조되어 읽어줌</strong><!-- 폰트두꼐가 두껍게 표현 -->
+    <b>b 장식적인 요소</b><!-- 두껍게 표현되는 테그 , 옆으로 배치가 됨 -->
+
+    <em><span style="color: burlywood;">em</span> 기울기 모양 텍스트 , 내용강조에 사용, 강조되어 읽어줌</em>
+    <i>i 장식적인 요소, 텍스트 기울기 사용 </i>
+
+    <span>span</span><!-- 의미는 없지만 텍스트 사이에 다른 스타일 사용시 이용 -->
+</body>
+</html>

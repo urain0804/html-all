@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라데이션</title>
+    <style>
+        .box-01{
+            height: 500px;
+            background: rgb(57,57,57);
+            background: linear-gradient(18deg, rgba(57,57,57,1) 11%, rgba(255,175,11,1) 35%, rgba(0,212,255,1) 100%);
+        }
+        .box-02{
+            height: 500PX;
+            background: rgb(238,174,202);
+            background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(208,163,226,1) 33%, rgba(148,187,233,0.7154046997389034) 100%);
+        }
+        .box-03{
+            height: 300PX;
+            margin: 100PX 0;
+            background-color: salmon;
+            border: 10px solid transparent;
+            /* transparent 색상투명색 설정 
+            -> 그라데이션 값 추가 (background-color: linear-gradient)*/
+            background: linear-gradient(#fff,#fff),/* 본문, 테두리 컬러값 설정 */
+                        linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+            background-origin: border-box;
+            /* background-origin : 배경컬러를 어디부터 채울지 설정, 배경이미지의 위치 기준점 설정
+            border-box : 백그라운드 속성이 테두리 영역까지 포함하여 표현 
+            background-origin : padding-box(기본값 테두리 미포함 배경색 적용)*/
+            background-clip: content-box, border-box;
+            /*content-box: 내용의 왼쪽 위부터 채우기 시작
+            border-box : 테두리를 왼쪽 위부터 채우기 시작*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box-01"></div>
+    <div class="box-02"></div>
+    <div class="box-03"></div>
+    
+</body>
+</html>

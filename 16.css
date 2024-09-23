@@ -1,0 +1,72 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.tab_menu01{
+    display: flex;
+    justify-content: center;
+    /* margin은 width값이 존재할때 사용 가능 */
+}
+.tab_menu01 li{
+    background-color: rgba(100, 202, 100, 0.562);
+    width: 120px;
+    height: 50px;
+    border: 2px solid rgb(255, 125, 86);
+    text-align: center;
+    line-height: 50px;/* 글자와 글자 세로 간격, 높이와 똑같이 작성 */
+    /*  text-align: center; +  line-height: 50px; 
+    두개 같이 사용 /  글자 중앙 정렬*/
+}
+
+.tab_menu02 {
+    /* 인라인 블럭은 블럭 사이에 있는 값이 있어서 margin을 사용하면 맨 끝 블럭이 아래로 떨어짐 */
+    text-align: center;
+    /* 인라인 성질을 가지고 있다면 부모에게 text-align: center;을 작성하면 중앙으로 배치됨 
+   사용이유 : 자식인 inline-block을 가운데로 배치 */
+   margin: 50px 
+
+}
+.tab_menu02 li{
+    background-color: wheat;
+    text-align: center;
+    line-height: 50px;
+    width: 120px;
+    height: 50px;
+    border: 2px solid rgb(226, 145, 159);
+    display: inline-block
+    /* 잘 사용하지 않음 : 
+    인라인이 가지고 있는 성질과 블럭이 가지고 있는 성질 같이 사용 가능 li는 블럭성질  */
+    }
+    .btn{
+        width: 100px;
+        height: 50px;
+        background-color: rgb(255, 170, 217);
+        display: block;
+        /* 여러개 메뉴를 가로나열 inline-block / 가로나열x block */
+        line-height: 50px;
+        text-align: center;
+        margin: 50px auto;
+        /* 넓이값이 있으면 무조건 중앙배치는 margin: 0 auto; */
+    }
+
+    .item{
+        width: 600px;
+        border: 2px solid rgb(255, 157, 71);
+        margin: 0 auto;
+        text-align: center;/* 중앙정렬 방법1 : 부모에게 작성할 경우 글자도 같이 중앙정렬됨 */
+        /* 중앙정렬 방법1 : 이미지도 인라인테그->부모한테 text-align: center; 작성 하면 중앙배치 */
+    }
+    .item img{
+        width: 80%;
+        object-fit: cover;
+       /*  margin: 0 auto;
+        display: block; *//* 중앙정렬 방법2 : 블럭요소 성질로 만들어서 margin: 0 auto; 사용하기 */
+    }

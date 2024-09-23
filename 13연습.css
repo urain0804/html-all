@@ -1,0 +1,57 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'CookieRun';
+    src: url('font/쿠키런텍스트변환완/CookieRunOTF-Bold00.eot');
+    src: url('font/쿠키런텍스트변환완/CookieRunOTF-Bold00.eot?#iefix') format('embedded-opentype'),
+        url('font/쿠키런텍스트변환완/CookieRunOTF-Bold00.woff2') format('woff2'),
+        url('font/쿠키런텍스트변환완/CookieRunOTF-Bold00.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CookieRun';
+    src: url('font/쿠키런텍스트변환완/CookieRunOTF-Regular00.eot');
+    src: url('font/쿠키런텍스트변환완/CookieRunOTF-Regular00.eot?#iefix') format('embedded-opentype'),
+        url('font/쿠키런텍스트변환완/CookieRunOTF-Regular00.woff2') format('woff2'),
+        url('font/쿠키런텍스트변환완/CookieRunOTF-Regular00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CookieRun';
+    src: url('font/쿠키런텍스트변환완/CookieRunOTF-Black00.eot');
+    src: url('font/쿠키런텍스트변환완/CookieRunOTF-Black00.eot?#iefix') format('embedded-opentype'),
+        url('font/쿠키런텍스트변환완/CookieRunOTF-Black00.woff2') format('woff2'),
+        url('font/쿠키런텍스트변환완/CookieRunOTF-Black00.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.font p{
+    font-size: 50px;
+}
+.font p:nth-child(1){
+    font-weight: normal;
+}
+.font p:nth-child(2){
+    font-weight: bold;
+}
+.font p:nth-child(3){
+    font-weight: 900;
+}

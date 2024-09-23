@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지포함콘텐츠</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .box-01{
+            width: 1280px;
+            height: 1280px;
+            background-color: rgb(240, 208, 255);
+            margin: 0 auto;
+        }
+        .box-01 img{
+            width: 100%;
+            /*위 박스(부모)의 수치와 같이 하면 원하는 크기로 작성 가능 , 
+            번거롭게 하나 하나 수정하기 보다 퍼센테이지 이용이 편함*/
+            height: 400px;
+            object-fit: cover;/* 포토샵에 클리핑 마스크랑 같은 기능 */
+        }
+        .box-01 h1{/* h1만 작성할 경우 모든 h1에 적용되니 주의 */
+            font-size: 60px;
+            text-align: center;
+            margin-top: 220px;
+        }
+        .box-02 {/* 부모값에 높이, 마진을 설정해야됨 */
+            width: 1000px;/* 위아래 여백을 만듬 */
+            margin: 100px auto;/* 양옆 여백으로 중앙을 맞춤 */
+        }
+        .box-02 img{/* 자식값은 부모값을 따라감(%이용) */
+            width: 100%;
+            display: block;/* 그림과 글 사이에 여백이 없어진다*/
+        }
+        .box-02 h1{
+            background-color: rgb(245, 153, 183);
+            font-size: 70px;
+            text-align: center;/* 글자 중앙 맞추기 */
+            padding: 50px;
+            /* margin은 바깥쪽 여백(컨텐츠 사이여백) , padding은 안쪽 여백(내 공간 확장) */
+        }
+        .box-03 {
+            width: 1000px;
+            margin: 100px auto;
+        }
+        .box-03 img{
+            width: 100%;
+            display: block;
+        }
+        .box-03 h1{
+            background-color: rgb(149, 207, 255);
+            font-size: 80px;
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-01">
+        <img src="img/이미지-연습-01.jpg" alt="블러셔 화장품 이미지" />
+        <h1>이미지에 대한 제목</h1>
+    </div>
+
+    <hr>
+    
+    <div class="box-02">
+        <a href="#">
+            <img src="img/예시 이미지2.jpg" alt="꽃 나눠주는 모습">
+            <h1>🌸꽃 나눔이</h1>
+        </a>
+    </div>
+
+    <hr>
+
+    <div class="box-03">
+        <a href="#">
+            <img src="img/바다 이미지.jpg" alt="푸른빛 바다 풍경">
+            <h1>💦바다모습</h1>
+        </a>
+    </div>
+    
+</body>
+</html>

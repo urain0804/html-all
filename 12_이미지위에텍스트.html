@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지위에텍스트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        .item{
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+            /* 부모값이나 배경이 변형이 안되는 코드 position: relative;
+               중심설정이 필요할 경우 사용해야 됨 (방향 설정x)*/
+        }
+        .item img{
+            object-fit: cover;
+            display: block;/* 블러로 흐릿해진 부분을 깔끔하게 마무리 해줌 */
+            width: 100%;
+            height: 300px  
+        }
+        .item h1{
+            color: rgb(0, 0, 0);
+            width: 100%;/* 사용하는 영역 부모값의 100% */
+            position: absolute;/* 사진위에 글자 올리는 역할 / 명확하게 작성해야됨 (position: absolute +위치2개 세트 (본인이 가진 영역만 잡힘)*/
+            bottom: 0 ;
+            left: 0;
+            /* top, bottom , right , left 상하 좌우로 이동가능 단 top와 bottom은 같이 사용할 수 없다.
+               이미지 위에 텍스트를 올릴떄 움직이고자 하는 선택자에게 포지션+위치설정 */
+            background-color: rgba(255, 255, 255, 0.596);
+            text-align: center;
+            font-size: 20px;
+            padding:  10px 0;/* 영역이 넓어짐 상하, 좌우(좌우값을 0으로 해야 옆으로 튀어나오지 않음) */
+            backdrop-filter: blur(7px);
+            /* 텍스트에 투명도가 적용되어있어야 블러 사용이 가능하다. */
+        }
+
+        .item2{
+            width: 400px;
+            margin: 50px auto; 
+            position: relative;  
+        }
+        .item2 img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .item2 h1{
+            background-color: rgba(250, 235, 215, 0.534);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 0;
+            backdrop-filter: blur(7px);
+        }
+        
+        .item-03{
+            width: 300px;
+            margin: 50PX auto;
+        }
+        .item-03 .item_imegs{
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+        .item-03 .item_imegs img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .item-03 .item_imegs p {
+            width: 100%;
+            background-color: rgba(255, 105, 180, 0.356);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            backdrop-filter: blur(7px);
+        }
+
+        .item_list{
+            display: flex; /* 가로나열 */
+            justify-content: center;
+            /* 수평정렬중 가운데 정렬(display: flex; 와 같이 사용해야됨) */
+        }
+        .item_list .item-04 {
+            width: 400px; 
+            margin-right: 20px;/* 이미지 사이 간격 조정 */
+            margin-bottom: 40px;
+        }
+        .item_list .item-04 .item_imegs {
+            height: 250PX;/* 이미지가 아닌 곳은 넓이값 생략- 부모값만큼 적용이 됨 */
+            position: relative;
+        }
+        .item_list .item-04 .item_imegs img{
+            width: 100%;/* 넓이값 생략 불가 */
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .item_list .item-04 .item_imegs p{
+            position: absolute;
+            padding: 10px 0 ;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            font-size: 20px;
+            background-color: rgba(0, 255, 255, 0.37);
+            width: 100%;
+            backdrop-filter: blur(7px);
+        }
+
+        .item_list_1{
+            display: flex;
+        }
+        .item_list_1 .item-05{
+            width: 750px;
+            margin-left: 20px;
+        }
+        .item_list_1 .item-05 .item_imags{
+            width: 100%;
+            position: relative;
+        }
+        .item_list_1 .item-05 .item_imags img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .item_list_1 .item-05 .item_imags p{
+            background-color: rgba(0, 0, 0, 0.671);
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+       /*  .item_list_1 .item-05 text {
+            
+        } */
+
+
+
+    </style>
+</head>
+<body>
+    <div class="item">
+        <img src="img/바다 이미지.jpg" alt="">
+        <h1>이미지</h1>
+    </div><!-- item.end -->
+
+    <div class="item2">
+        <img src="img/풍경이미지.jpg" alt="">
+        <h1>자연풍경</h1>
+    </div><!-- item.end -->
+
+    <div class="item-03">
+        <div class="item_imegs">
+            <img src="img/예시 이미지.jpg" alt="">
+            <p>꽥꽥오리들</p>
+        </div><!-- .item_imags.end -->
+        <div class="text">
+            <h1>이미지3 상품이름</h1>
+            <p>2024.09.06</p>
+        </div><!-- text.end -->
+    </div><!-- itme-03.end -->
+
+    <div class="item_list">
+
+        <div class="item-04">
+            <div class="item_imegs">
+                <img src="img/예시 이미지3.jpg" alt="">
+                <p>🐬🐳🐋🐟🐠</p>
+            </div><!-- item_imegs end -->
+            <div class="text">
+                <h1>바다생물 종류들</h1>
+                <p>2024.09.06~2024.10.11</p>
+            </div><!-- item-04 text end -->
+        </div><!-- item-04. end -->
+
+        <div class="item-04">
+            <div class="item_imegs">
+                <img src="img/예시 이미지3.jpg" alt="">
+                <p>🐬🐳🐋🐟🐠</p>
+            </div><!-- item_imegs end -->
+            <div class="text">
+                <h1>바다생물 종류들</h1>
+                <p>2024.09.06~2024.10.11</p>
+            </div><!-- item-04 text end -->
+        </div><!-- item-04. end -->
+
+    </div><!-- item_list. end -->
+
+    <div class="item_list_1">
+
+        <div class="item-05">
+            <div class="item_imags">
+                <img src="img/바른문구 이미지.jpg" alt="">
+                <p>4일남음</p>
+            </div><!-- item_imags end -->
+            <div class="text">
+                <h2>바른 문구 SHOPPING</h2>
+                <p>2024.08.01~2024.09.09</p>
+            </div><!-- text end -->
+
+        </div><!-- item-05 end -->
+        <div class="item-05">
+            <div class="item_imags">
+                <img src="img/일상의 색깔 이미지.jpg" alt="">
+                <p>5일 남음</p>
+            </div><!-- item_imags end -->
+            <div class="text">
+                <h2>Three colors : 일상의 색깔</h2>
+                <p>2024.08.05 ~ 2024.09.10</p>
+            </div><!-- text end -->
+
+        </div><!-- item-05 end -->
+        <div class="item-05">
+            <div class="item_imags">
+                <img src="img/더 위쳐스 이미지.jpg" alt="">
+                <p>7일남음</p>
+            </div><!-- item_imags end -->
+            <div class="text">
+                <h2>더 워처스 출시, 인기 스릴러 기획전</h2>
+                <p>2024.09.05 ~ 2024.09.12</p>
+            </div><!-- text end -->
+
+        </div><!-- item-05 end -->
+
+    </div><!-- item_list_1 end -->
+</body>
+</html>

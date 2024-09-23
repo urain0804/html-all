@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포토샵_아식스</title>
+    <style>
+            @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            line-height: 1;
+            /* 전체적인 text가 가지고 있는 빈 공간을 없애줌(전체적인 비율이 작아진다) */
+            font-family: 'Pretendard-Regular';
+            /* 기본 폰트로 설정되는 값는 바디 한테 작성하는 것이 좋다. */
+        }
+        .section{
+            background-color: #f2f2f2;
+            padding: 100px 0;
+        }
+        .section h1{
+            font-size: 48px;
+            padding: 40px 0;
+            text-align: center;/* 글자 중앙정렬 */
+        }
+        .section .item_wrap {
+            width: 1280px;
+            margin: 0 auto;/* 중앙 정렬 */
+            display: flex;/* item 가로로 배열 */
+            justify-content: space-between;
+        }
+        .section .item_wrap .item{
+            width: 414px;
+            background-color: #fff;
+        }
+        .section .item_wrap .item img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;/* 클리핑 마스크 역할 */
+        }
+        .section .item_wrap .item .text {
+             padding: 20px;
+             /* margin을 사용하면 배경컬러 제외하고 공간 / 
+             padding를 사용하면 배경컬러포함 공간을 만듬 */
+        }
+        .section .item_wrap .item .text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            height: 70px;
+        }
+        .section .item_wrap .item .text p{
+            font-size: 16px;
+            margin-bottom: 50px;
+            line-height: 1.3;
+            /* 기본적으로 글자 위아래 공간 넓이를 뜻함 (h2 , p에 사용할 경우 위아래 거리감이 나타난다.) */
+        }  /* 폰트크기 ex)  16 *1.3 => 20.8px  / 보통 1.3~1.8을 사용함*/
+        .section .item_wrap .item .text a{
+            font-size: 16px;
+            font-weight: bold;/* 폰트 두께 설정 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>뉴스 & 이벤트</h1>
+            <div class="item_wrap">
+                <div class="item">
+                    <img src="img/아식스-01.jpg" alt="빌딩숲">
+                    <div class="text">
+                        <h2>DAY OF CITY ASICS POP UP</h1>
+                        <p>아식스만의 건강한 데일리 루틴을 제안하는<br>
+                        팝업을 오픈합니다.</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div><!-- .item_end -->
+
+                <div class="item">
+                    <img src="img/아식스02.jpg" alt="건물의 흰색벽">
+                    <div class="text">
+                        <h2>Paris, Move Your Mind with<br>
+                            ASICS</h1>
+                        <p>파리 패션 위크를 달군<br>
+                        아식스 스포츠스타일의 이벤트 현장</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div><!-- .item_end -->
+
+                <div class="item">
+                    <img src="img/아식스03.jpg" alt="운동하는 사람들의 모습">
+                    <div class="text">
+                        <h2>24년 9월 첫 구매 특별 혜택 </h1>
+                        <p>최대 5만원 쿠폰 & 10% 할인 쿠폰<br>
+                        다양한 혜택 놓치지 마세요</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div><!-- .item_end -->
+
+            </div><!-- .item_wrap end -->
+    </div><!-- .section end -->
+</body>
+</html>
