@@ -1,0 +1,38 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.text_wrap{
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    /* 여러줄 말줄임표 
+    4. 플렉스 사용으로 텍스트 영역이 줄어들지 않아 처음 p에만 적용하도록 함 */
+
+}
+.text_wrap p{
+    width: 30%;/* 2. 넓이값 작성 -> 텍스트가 영역 밖으로 벗어나게 만듬 */
+    border: 1px solid #333;
+    font-size: 20px;
+    word-break: break-all;
+}
+
+.text_wrap p:nth-child(2){
+    /* 한 줄 말줄임표 */
+    white-space: nowrap;/* 1. 글자 한줄로 표현 */
+    text-overflow: ellipsis;/* 3. ellopsis 작성 -> 말줄임표 기호 표시 */
+    overflow: hidden;/* 4.영역 벗어난 텍스트 숨김 처리 */
+
+}
+.text_wrap p:nth-child(3){
+    /* 여러줄 말줄임표 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* 1. 디스플레이를 webkit-box 설정 하고 
+    vertical에서 속성을 설정함 */
+    -webkit-line-clamp: 3; /* 2.말줄임표 아이콘 보여질 줄 작성 */
+    overflow: hidden;/* 3. 영역을 벗어나는 곳 감추기 */
+}
+

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+html{/* 전체 영역에 마우스커서가 변경 되려면 최상위 태그 사용 */
+    cursor: url('../img/마우스커서/Flower.png')30 33.5, auto;
+    /* 화살표 = default 
+    1. 전체태그에 커서 태그작성-이미지 연결- ,+오토 작성
+    2. 콤마 앞에 사이즈 조정 피그마 사이즈 반*/
+}
+a{
+    cursor: url('../img/마우스커서/Hope.png') 30 30, auto;
+}
+
+#wrap a{
+    display: block;
+    width: 120px;
+    height: 50px;
+    background-color:lightcoral;
+    text-align: center;
+    line-height: 50px;
+    margin: 50px  auto;
+}
+
+p::selection{/* 드래그 했을때 나타나는 색상 */
+    background-color: forestgreen;
+    color: antiquewhite;
+}
+

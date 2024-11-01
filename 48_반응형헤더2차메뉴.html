@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 헤더 2차메뉴</title>
+    <link rel="stylesheet" href="css/48.css">
+
+    <script>
+        /* 메뉴를 클릭했을때 모바일 메뉴가 나타남 */
+        /* 1. menu_btn을 클릭했을 때 실행 -> 2. mobile_nav한테 클래스명 active 추가 /삭제  */
+        /* 문서를 모두 읽은다음 스크립트 실행 🔽 */
+        window.onload = () => {
+            /* 변수 선언식 */ 
+            let menu_Btn = document.querySelector('.meun_btn');
+            let mobile_Nav = document.querySelector('.mobile_nav');
+
+            /* 1. menuBtn을 클릭했을 때 이벤트 실행 /어떻게 무엇을 적용시킬지 작성 */
+            menu_Btn.addEventListener('click' , () => {
+                /* 2. mobile_nav한테 클래스명 active 추가 /삭제 */
+                mobile_Nav.classList.toggle('active');
+            });
+        }/* script end */
+
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="inner">
+
+                <h1 class="logo">
+                    <a href="#">
+                        <img src="img/icon/icons8-맥-os-50.png" alt="애플logo">
+                    </a>
+                </h1><!-- logo end -->
+
+                <nav class="pc_nav pc">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth01">menu01</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu01-1</a></li>
+                                <li><a href="#">menu01-2</a></li>
+                                <li><a href="#">menu01-3</a></li>
+                                <li><a href="#">menu01-4</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth01">menu02</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu02-1</a></li>
+                                <li><a href="#">menu02-2</a></li>
+                                <li><a href="#">menu02-3</a></li>
+                                <li><a href="#">menu02-4</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth01">menu03</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu03-1</a></li>
+                                <li><a href="#">menu03-2</a></li>
+                                <li><a href="#">menu03-3</a></li>
+                                <li><a href="#">menu03-4</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth01">menu04</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu04-1</a></li>
+                                <li><a href="#">menu04-2</a></li>
+                                <li><a href="#">menu04-3</a></li>
+                                <li><a href="#">menu04-4</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav><!-- pc_nav pc end -->
+
+                <div class="meun_btn mobile">
+                    <img src="img/icon/icons8-메뉴-32.png" alt="메뉴">
+                </div><!-- meun_btn end -->
+
+                <nav class="mobile_nav mobile">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth01">menu01</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu01-1</a></li>
+                                <li><a href="#">menu01-2</a></li>
+                                <li><a href="#">menu01-3</a></li>
+                                <li><a href="#">menu01-4</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth01">menu02</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu02-1</a></li>
+                                <li><a href="#">menu02-2</a></li>
+                                <li><a href="#">menu02-3</a></li>
+                                <li><a href="#">menu02-4</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth01">menu03</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu03-1</a></li>
+                                <li><a href="#">menu03-2</a></li>
+                                <li><a href="#">menu03-3</a></li>
+                                <li><a href="#">menu03-4</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth01">menu04</a>
+                            <ul class="depth02">
+                                <li><a href="#">menu04-1</a></li>
+                                <li><a href="#">menu04-2</a></li>
+                                <li><a href="#">menu04-3</a></li>
+                                <li><a href="#">menu04-4</a></li>
+                            </ul>
+                        </li>
+                    </ul><!-- gnb end -->
+                </nav><!-- mobile_nav mobile end -->
+
+            </div><!-- inner end -->
+        </header>  <!-- header end -->
+    </div><!--  wrap end -->
+</body>
+</html>

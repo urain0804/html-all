@@ -1,0 +1,68 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* 기본 설정값 */
+body{
+    color: #333;
+}
+
+.mobile {
+    display: none ;
+}
+/* pc용 스타일 값 */
+.header{
+    height: 100px;
+    border-bottom: 1px solid #333;
+}
+
+.header .inner{
+    max-width: 1280px;
+    width: calc(100% - 40%);
+    /* height 값이 없을 경우  align-items: center; 가 적용이 안됨
+    부모가 가지고 있는 영역 값 만큼 작성해야 적용이 됨  */
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .inner .pc_nav .gnb{
+    display: flex;/*로고까지 상단에 배치됨 */
+    gap: 30px;
+}
+
+/* 화면의 크기가 1024px 이하일 때 부터 스타일 적용 */
+@media screen and (max-width: 1024px){
+    .pc {
+        display: none;/* pc내용 지우기 */
+    }
+    .mobile {
+        display: block; /* 모바일 내용 나타내기 */
+    }
+
+    .header .inner .mobile_nav{
+        width: 50%;/* 하단 메뉴의 넓이 잡기 */
+        height: 100vh;/* 하단 메뉴의 높이 잡기 */
+        background-color: lightseagreen;
+        /* 메뉴보기 하단에 위치 잡기 */
+        position: fixed;
+        right: 0;
+        top: 100px;
+        padding: 30px;
+        display: none;
+        /* 하단메뉴를 움직이는건 스크립트 라서 스타일에서는 여기까지만 작성
+        기본적인 반응형 헤더 html구조 작성 방법 */
+    }
+
+}/* 1024 */

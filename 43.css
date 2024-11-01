@@ -1,0 +1,210 @@
+@charset "utf=8";
+/* *reset부분 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    color: #333;
+}
+/* common */
+
+section h1{
+    font-size: 60px;
+    /* vw: 브라우저 가로넓이에 따라 폰트 크기 변형, vh: 브라우저 높이에 따라 폰트 크기 변경  */
+    margin-bottom: 40px;
+}
+
+section .inner{
+    max-width: 1280px;
+    width: calc(100% - 40px);
+    margin: 150px auto;
+}
+
+/* .section-01 */
+
+.section-01 .item_wrap{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 150px 0;
+    flex-wrap: wrap;
+}
+.section-01 .item_wrap .item {
+    width: 200px;
+}
+.section-01 .item_wrap .item img{
+    width: 100%;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.section-01 .item_wrap .item p{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* .section-02 */
+/* 이미지와 텍스트 둘다한테 영역 50%를 잡아줘야됨
+잡지 않으면 텍스트 영역 그대로 적용되어 이미지가 작아짐 */
+
+.section-02 .item_wrap{
+    display: flex;
+}
+.section-02 .item_wrap .image{
+    width: 50%;
+    height: 700px;
+}
+.section-02 .item_wrap .image img{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+.section-02 .item_wrap .text{
+    width: 50%;
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* columu이랑 같이 쓰면 수직정렬 */
+    text-align: center;/* 수평 가운데 정렬 */
+    font-weight: bold;
+    padding: 0 40px;
+    position: relative;
+}
+.section-02 .item_wrap .text a{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    border-radius: 50px;
+
+}
+.section-02 .item_wrap .text a:hover{
+    background-color: lemonchiffon;
+    transition: 0.5s;
+}
+
+/* section-03 */
+
+.section-03 .inner .item_wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.section-03 .inner .item_wrap .item {
+    width: 24%;
+}
+.section-03 .inner .item_wrap .item .image{
+    max-width: 400px;
+    height: 31.25vw;/* 화면 넓이에 같이 대응 되고자 하는 곳에 넣기
+    400 % 1280 * 100=> ??vw */
+    overflow: hidden;
+}
+.section-03 .inner .item_wrap .item .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+.section-03 .inner .item_wrap .item .image:hover img{
+    transform: scale(1.2);
+    transition: 0.7s;
+}
+.section-03 .inner .item_wrap .item h2{
+    text-align: center;
+}
+
+/* 화면 줄였을때 이미지 축소되도록 만들기 */
+/* 화면의 크기가 1024px 이하일 때 스타일 적용 */
+@media screen and (max-width: 1024px){
+    section .item_wrap{
+        margin: 100px auto;
+    }
+    section .inner{
+        margin: 100px auto;
+    }
+    section h1{
+        font-size: 40px
+    }
+}/* 1024px */
+
+/* 화면 크기 767px 이하일 때 스타일 적용 */
+@media screen and (max-width: 767px){
+    .section-03 .inner .item_wrap{
+        flex-wrap: wrap;
+        row-gap: 40px;
+    }
+    .section-03 .inner .item_wrap .item{
+        width: 49%;
+    }
+    .section-03 .inner .item_wrap .item .image {
+        height: 52.15vw;
+    }
+}
+
+/* 화면 크기 640px 이하일때 스타일 적용 웹->태블릿 */
+@media screen and (max-width:640px){
+    .section-02 .item_wrap{
+        flex-wrap: wrap;
+    }
+    .section-02 .item_wrap .image{
+        width: 100%;
+    }
+    .section-02 .item_wrap .text{
+        width: 100%;
+        height: 350px;
+    }
+    .section-02 .item_wrap .text a{
+        height: 30px;
+        width: 150px;
+        align-items: center;
+        line-height: 25px;
+    }
+}
+
+/* 화면크기 480px 이하일때 스타일 적용 태블릿->모바일 */
+@media screen and (max-width:480px){
+    section .item_wrap{
+        margin: 70px auto;
+    }
+
+    .section-01 .item_wrap {
+        margin: 70px 0;
+        gap: 16px;}
+
+    .section-01 .item_wrap .item{
+        width: 100px;
+    }
+    .section-01 .item_wrap .item img{
+        height: 100px;
+    }
+    .section-01 .item_wrap .item p{
+        font-size: 16px;
+    }
+
+    /* section-03 */
+    .section-03 .item_wrap .item h2{
+        font-size: 18px;
+    }
+
+/* 1024 / 767 /480 / 320 => 기본 미디어쿼리 사이즈
+
+중간에 수정하고자 할때 사용하는 수치
+=> 1024 / 960 / 890 / 767 / 576 /480 /420 /414 / 380 /360  */
+
+
+    
+}

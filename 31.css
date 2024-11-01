@@ -1,0 +1,111 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* 1. 전체 영역 잡기 */
+.main_visal{
+    height: 100vh;
+}
+
+/* 2.이미지 영역 잡기 + object-fit: cover; */
+.main_visual img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 3. 메뉴가 들어갈 헤더영역 높이값 잡기 */
+.header{
+    height: 100px;
+    background-color: #B4D0F3;
+}
+
+/* 4.inner 영역 잡고 (로고)+(로그인,회원가입,검색) 부분 중앙배치 */
+.header .inner{
+    width: 1280px;
+    height: 100%;
+    background-color: #B4D0F3;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 5.(로그인,회원가입,검색) 부분 가로배치+공간만들기 */
+.header .inner .util{
+    display: flex;
+    gap: 20px;
+}
+
+/* 6. 중앙 메뉴 부분 가로배치 */
+.header .inner .nav .gnd{
+    display: flex;
+}
+
+/* 7. 1차메뉴 영역 확장 */
+.header .inner .nav .gnd > li .depth01{
+    padding: 0 30px;
+    line-height: 100px;
+    /* 1차 메뉴 헤더 중앙으로 맞춰줌(헤더영역과 동일한 수치)
+    + 2차 메뉴 위치를 헤더 바로 아래쪽으로 배치 시켜줌 */
+}
+
+/* 8. 2차 메뉴 위치 잡기 */
+.header .inner .nav .gnd > li .depth02{
+    background-color: #B4D0F3;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center;/* 2차메뉴를 1차메뉴의 중앙으로 맞춰줌 */
+
+    opacity: 0;/* 2차 메뉴 숨김처리-투명도로 설정 */
+    transition: 0.5s;/* 없어지는 시간 지정 */
+    visibility: hidden;/* 2차 메뉴 숨김처리 */
+}
+.header .inner .nav .gnd > li{
+    position: relative;
+    
+} 
+
+/* 9. 2차메뉴 영역잡기 */
+.header .inner .nav .gnd > li .depth02 li{
+    padding: 20px 0;
+}
+
+.header .inner h1 a{
+    color: #f046b4;
+    position: relative;
+    z-index: 1;
+}
+.header .inner h1 a::before{
+    content:'urain🌧';
+    -webkit-text-stroke: 5px #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: aqua;
+    z-index: -1;
+}
+
+.header .inner .nav .gnd:hover > li .depth02{
+    opacity: 1;
+    /* 2차메뉴 뿐만 아니라 사진 위쪽 영역에도 마우스를 올리면 나온다.
+    눈에는 안보이지만 존재는 한다 */
+    visibility: visible;
+}
+
+/* 
+display:none => transition x / 없애기, 존재 없애기
+opacity: 0 => transition o / 없애기, 존재함
+visibility: hidden => transition x / 없애기, 존재 / opacity와 함께 쓰면 transition적용됨*/
+

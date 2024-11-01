@@ -1,0 +1,232 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li{
+    list-style: none;
+}
+
+body{
+    color: #333;/* 검은색 보다 짙은 회색을 쓰는게 조금 더 일반적이다.
+    검은색은 다소 무거워 보이는 경향 */
+}
+
+.section-01{
+    background-color: wheat;
+    padding: 150px 0;/* 여백을 늘릴때는 위아래만 사용 = 양옆 사용시 스크롤바가 무한정으로 생김 */
+
+}
+
+.section-01 .inner{
+    max-width: 1440px;/* 넓이를 최대 넓이로 맞추면 아이템 영역이 줄어든 영역에 맞게 줄어듬 그러나 좌우여백x */
+    width: calc(100% - 40px);/* calc함수+퍼센트 값을 이용하면 여백을 만듬 각각 20%값이됨 */
+    background-color: violet;
+    margin: 0 auto;
+}
+
+.section-01 .inner h1{
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+
+.section-01 .inner .item_wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-01 .inner .item_wrap .item{
+    width: 24%;/* item_wrap의 전체 영역 나누기 아이템 4개 값으로 */
+    background-color: steelblue;
+    height: 400px;
+}
+
+
+
+.section-02 .inner{/* 이미지 있는 버전 */
+    /* 1. 전체 넓이 max-width + width:calc 사용 + margin 사용   */
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 150px auto;
+}
+    /* 2. title 폰트 사이즈 맞추기 + 아래 여백 만들기 */
+.section-02 .inner h1{
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+    /* 3. display:flex 사용해서 수평정렬 + 양끝으로 배치 */
+.section-02 .inner .item_wrap{
+    display: flex;
+    justify-content: space-between;
+}
+    /* 4. 아이템의 넓이 고정 :  전체 넓이 나누기 아이템 갯수 = 작성할 퍼센테이지 */
+.section-02 .inner .item_wrap .item{
+    width: 24%;
+}   /* 5. 이미지의 넓이 고정 : 넓이값 100%로 작성, 이미지가 깨지지 않도록 object-fit: cover; */
+.section-02 .inner .item_wrap .item img{
+    width: 100%;
+    height: 400px;/* 높이는 이미지에 직접 입력 */
+    object-fit: cover;
+}
+/* @media screen and (max-width:1024px) 작성할것 */
+
+
+.section-03 .inner{
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 150px auto;
+}
+.section-03 .inner h1{
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+.section-03 .inner .item_wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.section-03 .inner .item_wrap .item{
+    width: 24%;
+    position: relative;
+}
+.section-03 .inner .item_wrap .item img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.section-03 .inner .item_wrap .item h2{
+    width: 100%;
+    height: 100%;
+    background-color: #33333378;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
+    color: aliceblue;
+    font-size: 18px;
+    /* 🔽배경 만들었을때 글자 중앙으로 다시 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 🔽이미지에서 텍스트 안보이게 함 */
+    display: none;
+}
+
+
+.section-03 .inner .item_wrap .item:hover h2{
+    display: flex;/* 이미지에 마우스 올리면 텍스트가 다시 보임 */
+}
+
+
+/* 화면의 크기가 1024px 이하일떄 스타일 변경, 테블릿 사이즈 */
+@media screen and (max-width:1024px){
+    .section-03 .inner .item_wrap .item h2{
+        width: auto;/* 원래 가지고 있던 영역으로 돌려줌 */
+        height: auto;
+        display: flex;/* 숨겼던 텍스트 다시 보이도록 함 */
+        position:static;/* 포지션 초기화  */
+        background-color: transparent;/* 배경이 안보이도록 함 */
+        color: #333;
+        justify-content: flex-start;/* 텍스트 정렬 */
+    }
+    
+}/* 1024px */
+
+/* 화면의 크기가 767px 이하일떄 스타일 변경 */
+@media screen and (max-width:767px) {
+    /*6. 위아래 높이 100px로 줄어듬 */
+    .section-01 {
+        padding: 100px 0 ;
+    }
+    .section-01 .inner h1{
+        font-size: 32px;
+    }
+    .section-01 .inner .item_wrap{
+        flex-wrap: wrap;/* 7. 아이템이 내려갈 수 있도록 작성 flex가 작성 되어 있는 곳에 작성 */
+        row-gap: 8px ;/* 아래쪽 공간 만들기 */
+    }
+    .section-01 .inner .item_wrap .item{
+        width: 49%;/* 8. 아이템 2개씩 만들기 위해 49%로 변경 */
+        
+    }
+/* section-02 */
+    .section-02 .inner{
+        margin: 100px auto ;/* 스타일에 작성한 마진으로 이용해서 변경해주기 */
+    }
+    .section-02 .inner h1{
+        font-size: 32px;
+    }
+    .section-02 .inner .item_wrap{
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+    .section-02 .inner .item_wrap .item{
+        width: 49%;
+    }
+    .section-02 .inner .item_wrap .item h2{
+        font-size: 20px;
+    }
+/* section-03 */
+    .section-03 .inner{
+        margin: 100px auto;
+    }
+    .section-03 .inner .h1{
+        font-size: 32px;
+    }
+    .section-03 .inner .item_wrap{
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .section-03 .inner .item_wrap .item{
+        width: 49%;
+    }
+}/* 767px */
+
+/* 화면의 크기가 480px 이하일떄 스타일 변경 */
+@media screen and (max-width:480px){
+    .section-01{
+        padding: 60px 0;
+    }
+    .section-01 .inner h1{
+        font-size: 24px;
+        padding-bottom: 20px;/* 텍스트 아래 공간 만들어주기 */
+    }
+    .section-01 .inner .item_wrap .item{
+        height: 200px;
+    }
+/* section-02 */
+    .section-02 .inner{
+        margin: 60px auto;
+    }
+    .section-02 .inner h1{
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .section-02 .inner .item_wrap .item img{
+        height: 200px;
+    }
+    .section-02 .inner .item_wrap .item h2{
+        font-size: 16px
+    }
+/* section-03 */
+    .section-03 .inner{
+        margin: 60px auto;
+    }
+    .section-03 .inner h1{
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .section-03 .inner .item_wrap .item img{
+        height: 200px;
+    }
+    .section-03 .inner .item_wrap .item h2{
+        font-size: 16px;
+    }
+}/* 480px */
+

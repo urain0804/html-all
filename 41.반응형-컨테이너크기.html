@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 컨테이너크기</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .section-01{
+            max-width: 1280px;
+            width: 98%;
+            /*  최대 넓이값을 작성하고 width수치를 %로 작성하여 사용 하면 media를 사용한 것과 같은 효과 */
+            /* width: calc(100% - 40px); */
+            height: 100vh;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+
+        .section-01 h1{
+            font-size: 50px;
+            text-align: center;
+        }
+
+        /* @media screen and (max-width:1280px){
+            /* 1280px이하일때 */
+           /*  .section-01{
+                width: 100%;
+
+            }
+        } */ 
+
+        @media screen and (max-width:640px){
+            .section-01 h1{
+                font-size: 20px;
+            }
+        }/* 화면의 크기가 640px 이하 일때 폰트 사이즈가 20px로 줄어든다 */
+        /* 반응형 만들때 주의점 : 스타일 상단에 적용한 선택자한테 그대로 적용해야됨  */
+
+    </style>
+</head>
+<body>
+    <section class="section-01">
+        <h1>반응형</h1>
+    </section><!-- section-01 end -->
+</body>
+</html>

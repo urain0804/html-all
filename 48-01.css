@@ -1,0 +1,133 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li{
+    list-style: none;
+}
+body{color: #333;}
+
+/* 반응형 헤더 2차메뉴 기본작성 공식 */
+.mobile{
+    display: none;
+    /* 모바일 부분 안보이게 처리 */
+}
+.header{
+    height: 100px;/* 헤더 높이 잡기 */
+    border-bottom: 1px solid #333;/* 헤더 영역 아래 쪽 선 만들기 */
+}
+.header .inner{
+    max-width: 1280px;/* 전체영역 넓이 잡기 */
+    width: calc(100% - 40%);/* 화면 줄이고 늘리기에 따라 변화 */
+    height: 100%;/* 높이는 헤더와 같은 수치 / px로 하면 일일히 변경해야 되기 때문에 %로 작성 */
+    margin: 0 auto;/* 중앙 맞추기 */
+    display: flex;/* 로고 + 네비게이션 가로배치 */
+    align-items: center;/* 높이 중앙 맞추기 */
+    justify-content: space-between;/* 로고 + 네비게이션 양끝배치 */
+}
+
+
+/* logo  위치잡기 */
+.header .inner .logo{
+    height: 50px;/* 이미지 크기만큼 높이작성 = 헤더영역 중앙에 맞추기 */
+}
+.header .inner .logo a{
+    display: block;
+    height: 100%;
+     /* a 태그도 logo가 가지고 있는 height값이랑 동일하게 만들어 줌
+    =  display: block */
+}
+.header .inner .logo a img{
+    height: 100%;
+    /* 이미지 크기에 맞춰서 사용하려면 높이만 맞춰주면 됨
+    넓이까지 하면 이미지가 짤리는 경우가 있음 */
+}
+
+
+/* 네비게이션 - 1차메뉴,2차메뉴 위치 잡기 + 2차메뉴 숨기기 */
+.header .inner .pc_nav .gnb{
+    display: flex;/* 1. 1차 + 2차 메뉴 가로정렬 */
+}
+.header .inner .pc_nav .gnb > li{
+    position: relative;/* 5-1. depth01은 형제 , li는 부모태그 이기때문에 여기 작성 */
+}
+.header .inner .pc_nav .gnb > li .depth01{
+    line-height: 100px;/* 2. 1차메뉴 영역잡기 (헤더 높이와 동일하게, height를 사용하면 부모값에 모두 작성해야되서 효율이 떨어짐) */
+    padding: 40px 30px;/* 3. 1차+2차메뉴 간격띄우기 (gap을 사용하면 2차 메뉴들 영역이 좁아짐 */
+}
+.header .inner .pc_nav .gnb > li .depth02{
+    width: 100%;/* 4.2차메뉴 영역잡기 */
+    position: absolute;/* 5. 1차메뉴 밑으로 위치 잡기 */
+    top:100px;/* header영역 바로아래 위치 */
+    left: 0;
+    text-align: center;/* 6. 2차메뉴 텍스트 중앙배치 */
+    display: none;/* 9. 2차메뉴 숨기기 */
+}
+.header .inner .pc_nav .gnb > li .depth02 li a{
+    padding: 10px 0;/* 7. 2차메뉴를 감싸고 있는 a태그 영역 넓혀주기 (텍스트에만 영역이 잡히면 클릭하기 어려움) */
+    display: block;/* 8. a는 인라인 태그이기 때문에 padding을 사용하기 위해 작성해줌 */
+}
+
+
+/* 1차메뉴에 마우스를 올리면 2차메뉴가 나오게 하기 */
+.header .inner .pc_nav .gnb > li:hover .depth01{
+    background-color: violet;/* 1차 메뉴 배경색 */
+    border-radius: 50%;
+}
+.header .inner .pc_nav .gnb > li:hover .depth02{
+    background-color: lightpink;
+    display: block;/* 1차 메뉴에 마우스를 올렸을때 보이도록 함 */
+}
+
+
+/* 화면크기 1024px 이하일때 */
+@media screen and (max-width:1024px) {
+    .pc{display: none;}
+    .mobile{display: block;}
+    /* PC 버전 숨김 / 모바일 버전 나타남 */
+
+    /* 모바일 버전 스타일 작성 */
+    .header .inner .mobile_nav{
+        width: 100%;/* 모바일 네비게이션 넓이 잡기 (기존 스타일 inner의 영역을 가져옴) */
+        height: 100%;/* 높이잡기 " */
+        background-color: lightskyblue;
+        position: fixed;/* 요소를 고정된 위치에 배치 */
+        left: 0;/* 보이지 않도록 화면 밖으로 위치 */
+        top: 100px;/* 헤어영역 아래 위치 */
+        padding: 50px;/* 헤더 - 2차메뉴 사이 공간 만들기 */
+    }
+    .header .inner .mobile_nav .gnb > li{
+        border-bottom: 1px solid #333;/* 2차 메뉴 사이에 구별선 */
+    }
+    .header .inner .mobile_nav .gnb > li .depth01{
+        font-size: 20px;
+        font-weight: bold;
+        display: block;/* padding 사용을 위해 작성 */
+        padding: 20px 0;
+    }
+    .header .inner .mobile_nav .gnb > li .depth02{
+        display: none;/* 3차메뉴 안보이도록 작성 */
+    }
+    .header .inner .mobile_nav .gnb > li .depth02 li a{
+        display: block;/* 클릭가능한 영역 넓이기 위해 padding사용 => 인라인 태그라서 display: block 같이 사용 */
+        padding: 10px 0;
+    }
+
+    /* 모바일 아이콘 설정 */
+    .header .inner .menu_btn{
+        height: 30px;/* 버튼 이미지 영역 맞추기 (높이만 맞추기) */
+    }
+    .header .inner .menu_btn img{
+        height: 100%;/* 이미지와 영역 동일하게 맞추기 */
+    }
+
+
+}
+
+

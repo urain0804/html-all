@@ -1,0 +1,99 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 로고, util 메뉴 헤드 상단 중앙 맞춤 */
+.main_visual{
+    height: 100vh;
+}
+.main_visual img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header{
+    height: 100px;
+    background-color: rgb(25, 151, 255);
+}
+
+.header .inner{
+    width: 1280px;
+    height: 100%;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.header .inner .util{
+    display: flex;
+    gap: 20px;
+}
+/* 로고, util 메뉴 헤드 상단 중앙 맞춤 end */
+
+
+.header .inner .nav .gnd{
+    display: flex;
+}
+.header .inner .nav .gnd > li {
+    position: relative;
+}
+
+.header .inner .nav .gnd > li .depth01{
+    line-height: 100px;
+    padding: 0 20px;
+}
+/* gap을 사용하면 링크를 클릭할 수 있는 공간이 작음
+ 링크가 들어가는 공간이 넓어지도록 a 에게 적용
+ = depth01에게  padding적용*/
+ /* meun01~05 헤드 상단 높이 맞춤 = 아래 자식들 공간이 어그러지지 않음 
+= padding: 0 20px; */
+
+.header .inner .nav .gnd > li .depth02{
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center;
+    display: none;/* 해당하는 요소들 숨김처리 기능 (안보임->보임) / display: block;과 세트*/
+}
+/* li가 가지고 있는 영역만큼 2차메뉴도 영역 확장+중앙맞춤
+= width: 100%; + text-align: center;+  padding: 15px 0 ; */
+
+.header .inner .nav .gnd > li .depth02 li{
+    padding: 15px 0 ;
+}
+
+.header .inner .nav .gnd > li .depth02 li:hover{
+    background-color: #FFB900;
+    color: #fff;
+    border-radius: 30px;
+}
+/* 2차 메뉴에 마우스를 올릴때 배경컬러 변경 */
+
+/* 1차 메뉴에 마우스를 올리면 2차 메뉴가 보이도록 설정 */
+/* li 전체를 감싸고 있는 gnb에 display: block; 적용할 경우 전체 메뉴가 나옴 */
+.header .inner .nav .gnd > li:hover .depth02{
+   display: block;/* 눈에도 안보이고 존재도 하지 않음 */
+}
+
+.header .inner .nav .gnd > li:hover .depth01{
+    background-color: #fff;
+    color: #FFB900;
+    border-radius: 25px;
+    padding: 20px;
+}
+/* 1차 메뉴에 마우스를 올리면 배경색상,글자색상 변경 */
+

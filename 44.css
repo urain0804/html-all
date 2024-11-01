@@ -1,0 +1,90 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    color: black;
+}
+ .item_wrap{
+    max-width: 1280px;
+    width: calc(100%-40%);
+    margin: 100px auto;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+ }
+ .item_wrap div{
+    background-color: coral;
+    width: 19%;
+    position: relative;
+ }
+
+ .item_wrap div::after{
+    content: '';
+    width: 100%;
+    padding-bottom: 100%;/* 부모가 가진 넚이값 만큼 */
+    background-color: wheat;
+    display: block;/* 인라인태그이기 때문에 블럭 이용  */
+ }
+ /* 가상선택자 이용 : befor는 왼쪽 또는 위쪽 / after는 오른쪽 또는 아래 영여깅 잡힘  */
+
+ .item_wrap div span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(127, 255, 113);
+    display: flex;
+    justify-content: center;
+    align-items: center;/* 수직 가운데 정렬 */
+    border-radius: 50%;
+    overflow: hidden;
+ }
+
+ .item_wrap-02 {
+    max-width: 1280px;
+    width: calc(100%-40%);
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .item_wrap-02 .item{
+    width: 24%;
+ }
+
+ /* 이미지 배치 */
+
+ .item_wrap-02 .item .image{
+    width: 100%;
+    position: relative;
+ }
+ 
+ .item_wrap-02 .item .image::before{
+    content:'';
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: rgb(8, 119, 82);
+    display: block;
+ }
+
+ .item_wrap-02 .item .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+ }
+
+ 

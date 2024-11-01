@@ -1,0 +1,126 @@
+@charset "utf=8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* 가상선택자 사용법 */
+body{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    margin: 50px 0;
+    z-index: 5;
+}
+/* 앞쪽에 배치 */
+.text01::before{
+    content: '🌝☁🌚';
+}
+/* 뒤쪽에 배치 */
+.text02::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: turquoise;
+    display: inline-block;/* 인라인 블럭 처리를 해야지 화면에 표시됨 */
+    margin-left: 10px;
+}
+
+.text03{
+    position: relative;
+    display: inline-block;
+    
+}
+.text03::before{
+    z-index: -1;
+    content:'';
+    width: 100%;
+    height: 20px;
+    background-color: violet;
+    display: block;
+    position: absolute;
+    bottom: 0;
+/* 텍스트 아래 쪽 색상띠 중앙맞추기 */
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0 20px;
+
+}
+
+/* 가상선택자를 사용해서  | 부분 배치하기 */
+.footer{
+    background-color: #393939;
+    color: #fff;
+    padding: 50px 0;
+    
+}
+.footer ul{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+.footer ul li{
+    position: relative;
+}
+.footer ul li::before{
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #fff;
+    /* 텍스트 앞 | 부분 위치 만들기
+      top: 50%;
+      transform: translate(0,-50%);*/
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+/* 첫번째 li의 before 없애기 */
+.footer ul li:nth-child(1):before{
+    display: none;
+}
+
+/* 박스 안 색상 채우기 */
+
+.btn{
+    width: 200px;
+    height: 50px;
+    border: 1px solid #393939;
+    display: block;
+    margin: 50px auto;
+    line-height: 50px;
+    position: relative;
+    
+}
+
+.btn::before{
+    content:'';
+    background-color: #FFC83D;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
+}
+/* 애니메이션을 사용할 선택자
++
+hover
++
+나오게될 색상이 들어가 있는 선택자 */
+.btn:hover::before{
+    opacity: 1;
+    width: 100%;
+}
